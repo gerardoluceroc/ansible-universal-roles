@@ -1,0 +1,15 @@
+#RUN: ansible-playbook playbook.yaml -K --extra-vars "ansible_user=USERNAME"
+
+#Replace USERNAME with the name of the operating system user that will execute the playbook.
+
+- hosts: localhost
+  connection: local
+  become: true
+  vars_files:
+    - vars/main.yml
+
+  # Roles to execute
+
+  roles: 
+
+  - ansible-role-postgresql
