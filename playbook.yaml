@@ -11,5 +11,34 @@
   # Roles to execute
 
   roles: 
+    # instalar java 17
+    - install-java
 
-  - ansible-role-postgresql
+    - install-maven
+
+    - install-docker
+
+    - install-nodejs
+
+    #Source: https://github.com/geerlingguy/ansible-role-mysql
+    - {role: ansible-role-mysql,
+        mysql_root_username: root,
+        mysql_root_password: root,
+        mysql_root_password_update: false
+      }
+
+  tasks:
+
+  # Tasks to be executed
+
+    # - name: Install Java 17
+    #   become: true
+    #   ansible.builtin.apt:
+    #     name: openjdk-17-jdk
+    #     state: present
+
+    # - name: Install Maven
+    #   become: true
+    #   apt:
+    #     name: maven
+    #   ansible.builtin.apt: openjdk-17-jdk

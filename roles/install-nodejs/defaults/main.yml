@@ -1,0 +1,4 @@
+---
+# defaults file for install-nodejs
+NODEJS_VERSION: "18"
+ansible_distribution_release: "focal"

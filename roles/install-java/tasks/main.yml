@@ -1,0 +1,7 @@
+---
+# tasks file for install-java
+- name: Install Java
+  become: true
+  ansible.builtin.apt:
+    name: "{{ package_version }}"
+    state: present
